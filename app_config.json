@@ -4,7 +4,6 @@
             "pass": "applications/some_app"
         }
     },
-
     "applications": {
         "some_app": {
             "type": "python 3",
