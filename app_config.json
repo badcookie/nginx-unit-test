@@ -1,0 +1,15 @@
+{
+    "listeners": {
+        "127.0.0.1:8000": {
+            "pass": "applications/some_app"
+        }
+    },
+
+    "applications": {
+        "some_app": {
+            "type": "python 3",
+            "path": "/src/",
+            "module": "flask_app"
+        }
+    }
+}

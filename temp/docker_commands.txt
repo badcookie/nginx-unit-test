@@ -1,0 +1,3 @@
+docker build -t n_unit .
+docker run -n n_unit_container -d n_unit
+docker exec -ti n_unit_container curl --unix-socket var/run/control.unit.sock http://localhost/config
