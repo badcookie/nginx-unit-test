@@ -1,6 +1,6 @@
 {
     "listeners": {
-        "127.0.0.1:8000": {
+        "*:8000": {
             "pass": "applications/some_app"
         }
     },
