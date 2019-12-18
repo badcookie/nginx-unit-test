@@ -1,9 +1,9 @@
 from flask import Flask
 
-flask_app = Flask(__name__)
+application = Flask(__name__)
 
 
-@flask_app.route('/', methods=['GET'])
+@application.route('/', methods=['GET'])
 def get_request():
-    return 'Success'
+    return 'Success\n'
 
