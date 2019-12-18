@@ -7,7 +7,7 @@ RUN mkdir /src
 COPY requirements.txt /src/
 WORKDIR /src/
 RUN pip3 install -Ur requirements.txt
-COPY app.py .
+COPY app/ app/
 COPY config.json /var/lib/unit/conf.json
 
 EXPOSE 8000

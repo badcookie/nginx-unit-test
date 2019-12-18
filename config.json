@@ -7,8 +7,8 @@
     "applications": {
         "some_app": {
             "type": "python 3",
-            "path": "/src/",
-            "module": "app"
+            "path": "/src/app/",
+            "module": "bikes.wsgi"
         }
     }
 }
