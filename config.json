@@ -1,9 +1,24 @@
 {
     "listeners": {
         "*:8000": {
-            "pass": "applications/some_app"
+            "pass": "routes"
         }
     },
+    "routes": [
+        {
+            "match": {
+                "uri": "*/static/*"
+            },
+            "action": {
+               "share": "/src/app/bikes/"
+            }
+        },
+        {
+            "action": {
+                "pass": "applications/some_app"
+            }
+        }
+    ],
     "applications": {
         "some_app": {
             "type": "python 3",
