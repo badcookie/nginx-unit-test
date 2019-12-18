@@ -7,3 +7,4 @@ COPY . .
 
 FROM nginx/unit:1.13.0-python3.5
 COPY --from=python_env /src/ /src/
+EXPOSE 8000
