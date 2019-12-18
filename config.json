@@ -8,7 +8,7 @@
         "some_app": {
             "type": "python 3",
             "path": "/src/",
-            "module": "flask_app"
+            "module": "app"
         }
     }
 }
