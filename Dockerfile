@@ -10,4 +10,8 @@ RUN pip3 install -Ur requirements.txt
 COPY app/ app/
 COPY config.json /var/lib/unit/conf.json
 
+RUN chmod o+w app/
+WORKDIR app/
+RUN python3 manage.py makemigrations && python3 manage.py migrate
+
 EXPOSE 8000
