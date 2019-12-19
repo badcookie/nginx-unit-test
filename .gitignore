@@ -4,4 +4,3 @@ venv/
 temp/
 db.sqlite3
 static/
-.gitlab-ci.yml
