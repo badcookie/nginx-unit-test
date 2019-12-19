@@ -9,8 +9,12 @@ https://docs.djangoproject.com/en/2.1/howto/deployment/wsgi/
 
 import os
 
+from django.core.management import call_command
 from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bikes.settings')
 
 application = get_wsgi_application()
+
+if os.environ.get('SOME_APP_DEBUG', False):
+    call_command('migrate')

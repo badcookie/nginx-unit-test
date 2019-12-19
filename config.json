@@ -23,7 +23,10 @@
         "some_app": {
             "type": "python 3",
             "path": "/src/app/",
-            "module": "bikes.wsgi"
+            "module": "bikes.wsgi",
+            "environment": {
+                "SOME_APP_DEBUG": "true"
+            }
         }
     }
 }
