@@ -13,7 +13,4 @@ RUN chmod o+w app/
 
 COPY config.json /var/lib/unit/conf.json
 
-WORKDIR app/
-RUN python3 manage.py makemigrations && python3 manage.py migrate
-
 EXPOSE 8000
