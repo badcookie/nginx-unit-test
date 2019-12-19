@@ -1,6 +1,7 @@
 tests.py
 venv/
 temp/
- __pycache__
+ __pycache__/
 README.md
 Dockerfile
+db.sqlite3
