@@ -8,31 +8,31 @@ class ProductSerializer(serializers.ModelSerializer):
     category = serializers.PrimaryKeyRelatedField(
         queryset=Category.objects.all(), write_only=True
     )
-    category_name = serializers.CharField(source="category.name", read_only=True)
+    category_name = serializers.CharField(source='category.name', read_only=True)
 
     class Meta:
         model = Product
-        fields = ("id", "name", "description", "category", "category_name")
+        fields = ('id', 'name', 'description', 'category', 'category_name')
 
 
 class CategoryProductSerializer(serializers.ModelSerializer):
     """Processes list of products of manager's company for a particular category."""
 
-    category_name = serializers.CharField(source="category.name")
+    category_name = serializers.CharField(source='category.name')
 
     class Meta:
         model = Product
-        fields = ("id", "name", "description", "category_name")
+        fields = ('id', 'name', 'description', 'category_name')
 
 
 class PublicProductSerializer(serializers.ModelSerializer):
     """Processes list of all existing products."""
 
-    company_name = serializers.CharField(source="company.name")
+    company_name = serializers.CharField(source='company.name')
 
     class Meta:
         model = Product
-        fields = ("name", "description", "company_name")
+        fields = ('name', 'description', 'company_name')
 
 
 class PublicCategoryProductSerializer(serializers.ModelSerializer):
@@ -40,7 +40,7 @@ class PublicCategoryProductSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Product
-        fields = ("id", "name", "description")
+        fields = ('id', 'name', 'description')
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -48,4 +48,4 @@ class CategorySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Category
-        fields = "__all__"
+        fields = '__all__'

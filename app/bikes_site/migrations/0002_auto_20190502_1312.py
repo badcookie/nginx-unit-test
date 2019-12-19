@@ -6,27 +6,27 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
 
-    dependencies = [("bikes_site", "0001_initial")]
+    dependencies = [('bikes_site', '0001_initial')]
 
     operations = [
         migrations.AlterField(
-            model_name="category", name="name", field=models.CharField(max_length=200)
+            model_name='category', name='name', field=models.CharField(max_length=200)
         ),
         migrations.AlterField(
-            model_name="company", name="name", field=models.CharField(max_length=200)
+            model_name='company', name='name', field=models.CharField(max_length=200)
         ),
         migrations.AlterField(
-            model_name="motobike",
-            name="category",
+            model_name='motobike',
+            name='category',
             field=models.ForeignKey(
-                on_delete=django.db.models.deletion.CASCADE, to="bikes_site.Category"
+                on_delete=django.db.models.deletion.CASCADE, to='bikes_site.Category'
             ),
         ),
         migrations.AlterField(
-            model_name="motobike",
-            name="company",
+            model_name='motobike',
+            name='company',
             field=models.ForeignKey(
-                on_delete=django.db.models.deletion.CASCADE, to="bikes_site.Company"
+                on_delete=django.db.models.deletion.CASCADE, to='bikes_site.Company'
             ),
         ),
     ]

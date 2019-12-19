@@ -32,7 +32,7 @@ class ProductViewSet(viewsets.ModelViewSet):
     def get_serializer_class(self):
         return (
             CategoryProductSerializer
-            if self.kwargs.get("category_id") is not None
+            if self.kwargs.get('category_id') is not None
             else ProductSerializer
         )
 
@@ -40,7 +40,7 @@ class ProductViewSet(viewsets.ModelViewSet):
         manager = Manager.objects.get(user=self.request.user)
         company_products = Product.objects.filter(company=manager.company)
 
-        category_id = self.kwargs.get("category_id")
+        category_id = self.kwargs.get('category_id')
         if category_id is not None:
             category = get_object_or_404(Category, id=category_id)
             category_products = company_products.filter(category=category)
@@ -49,12 +49,12 @@ class ProductViewSet(viewsets.ModelViewSet):
         return company_products
 
     def get_object(self):
-        product_id = self.kwargs["product_id"]
+        product_id = self.kwargs['product_id']
         product = get_object_or_404(self.get_queryset(), id=product_id)
         return product
 
     def perform_create(self, serializer):
-        category_id = self.request.data["category"]
+        category_id = self.request.data['category']
         category = get_object_or_404(Category, id=category_id)
         manager = Manager.objects.get(user=self.request.user)
         serializer.save(company=manager.company, category=category)
@@ -76,12 +76,12 @@ class PublicProductViewSet(viewsets.ModelViewSet):
     pagination_class = PublicProductListPagination
 
     def get_object(self):
-        product_id = self.kwargs["product_id"]
+        product_id = self.kwargs['product_id']
         product = get_object_or_404(Product, id=product_id)
         return product
 
     def get_queryset(self):
-        category_id = self.kwargs.get("category_id")
+        category_id = self.kwargs.get('category_id')
         if category_id is not None:
             category = get_object_or_404(Category, id=category_id)
             category_products = Product.objects.filter(category=category)
@@ -92,6 +92,6 @@ class PublicProductViewSet(viewsets.ModelViewSet):
     def get_serializer_class(self):
         return (
             PublicCategoryProductSerializer
-            if self.kwargs.get("category_id") is not None
+            if self.kwargs.get('category_id') is not None
             else PublicProductSerializer
         )

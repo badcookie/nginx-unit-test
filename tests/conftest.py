@@ -9,7 +9,7 @@ IMAGE_DIR_PATH = dirname(dirname(abspath(__file__)))
 
 @pytest.fixture
 def base_url():
-    return f"http://localhost:{DEFAULT_PORT}/"
+    return f'http://localhost:{DEFAULT_PORT}/'
 
 
 @pytest.fixture

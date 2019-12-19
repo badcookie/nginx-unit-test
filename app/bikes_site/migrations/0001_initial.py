@@ -12,65 +12,65 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name="Category",
+            name='Category',
             fields=[
                 (
-                    "id",
+                    'id',
                     models.AutoField(
                         auto_created=True,
                         primary_key=True,
                         serialize=False,
-                        verbose_name="ID",
+                        verbose_name='ID',
                     ),
                 ),
-                ("name", models.CharField(max_length=200, unique=True)),
+                ('name', models.CharField(max_length=200, unique=True)),
             ],
         ),
         migrations.CreateModel(
-            name="Company",
+            name='Company',
             fields=[
                 (
-                    "id",
+                    'id',
                     models.AutoField(
                         auto_created=True,
                         primary_key=True,
                         serialize=False,
-                        verbose_name="ID",
+                        verbose_name='ID',
                     ),
                 ),
-                ("name", models.CharField(max_length=200, unique=True)),
+                ('name', models.CharField(max_length=200, unique=True)),
             ],
         ),
         migrations.CreateModel(
-            name="Motobike",
+            name='Motobike',
             fields=[
                 (
-                    "id",
+                    'id',
                     models.AutoField(
                         auto_created=True,
                         primary_key=True,
                         serialize=False,
-                        verbose_name="ID",
+                        verbose_name='ID',
                     ),
                 ),
-                ("name", models.CharField(max_length=200)),
-                ("description", models.TextField(blank=True)),
+                ('name', models.CharField(max_length=200)),
+                ('description', models.TextField(blank=True)),
                 (
-                    "category",
+                    'category',
                     models.ForeignKey(
-                        db_column="category",
+                        db_column='category',
                         on_delete=django.db.models.deletion.CASCADE,
-                        to="bikes_site.Category",
-                        to_field="name",
+                        to='bikes_site.Category',
+                        to_field='name',
                     ),
                 ),
                 (
-                    "company",
+                    'company',
                     models.ForeignKey(
-                        db_column="company",
+                        db_column='company',
                         on_delete=django.db.models.deletion.CASCADE,
-                        to="bikes_site.Company",
-                        to_field="name",
+                        to='bikes_site.Company',
+                        to_field='name',
                     ),
                 ),
             ],
