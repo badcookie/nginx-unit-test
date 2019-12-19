@@ -1,5 +1,4 @@
 import json
-import pytest
 import requests
 
 
@@ -15,7 +14,6 @@ def test_static(base_url):
     assert response.status_code == 200
 
 
-@pytest.mark.django_db
 def test_db(base_url):
     api_url = 'api/v1/'
     url = f'{base_url}{api_url}'
