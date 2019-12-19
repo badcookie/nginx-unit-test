@@ -9,31 +9,31 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('bikes_site', '0003_motobike_image'),
+        ("bikes_site", "0003_motobike_image"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Manager',
+            name="Manager",
             fields=[
                 (
-                    'id',
+                    "id",
                     models.AutoField(
                         auto_created=True,
                         primary_key=True,
                         serialize=False,
-                        verbose_name='ID',
+                        verbose_name="ID",
                     ),
                 ),
                 (
-                    'company',
+                    "company",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
-                        to='bikes_site.Company',
+                        to="bikes_site.Company",
                     ),
                 ),
                 (
-                    'user',
+                    "user",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
                         to=settings.AUTH_USER_MODEL,
@@ -42,36 +42,36 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='Product',
+            name="Product",
             fields=[
                 (
-                    'id',
+                    "id",
                     models.AutoField(
                         auto_created=True,
                         primary_key=True,
                         serialize=False,
-                        verbose_name='ID',
+                        verbose_name="ID",
                     ),
                 ),
-                ('name', models.CharField(max_length=200)),
-                ('description', models.TextField(blank=True)),
+                ("name", models.CharField(max_length=200)),
+                ("description", models.TextField(blank=True)),
                 (
-                    'category',
+                    "category",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
-                        to='bikes_site.Category',
+                        to="bikes_site.Category",
                     ),
                 ),
                 (
-                    'company',
+                    "company",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
-                        to='bikes_site.Company',
+                        to="bikes_site.Company",
                     ),
                 ),
             ],
         ),
-        migrations.RemoveField(model_name='motobike', name='category'),
-        migrations.RemoveField(model_name='motobike', name='company'),
-        migrations.DeleteModel(name='Motobike'),
+        migrations.RemoveField(model_name="motobike", name="category"),
+        migrations.RemoveField(model_name="motobike", name="company"),
+        migrations.DeleteModel(name="Motobike"),
     ]
