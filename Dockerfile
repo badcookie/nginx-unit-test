@@ -7,10 +7,12 @@ RUN mkdir /src
 COPY requirements.txt /src/
 WORKDIR /src/
 RUN pip3 install -Ur requirements.txt
+
 COPY app/ app/
+RUN chmod o+w app/
+
 COPY config.json /var/lib/unit/conf.json
 
-RUN chmod o+w app/
 WORKDIR app/
 RUN python3 manage.py makemigrations && python3 manage.py migrate
 
